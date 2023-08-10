@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "533633517315",
+    "project_id": "funquiz-game",
+    "storage_bucket": "funquiz-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533633517315:android:102bfefeb32019a504cb36",
+        "android_client_info": {
+          "package_name": "com.avi.funquizgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533633517315-li0eqn9s93fob9njplojon550vdm5s7k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.avi.funquizgame",
+            "certificate_hash": "6b4c66f82299ec3d5798d71b91d3b384f48ca614"
+          }
+        },
+        {
+          "client_id": "533633517315-qnpt60bpc081cjb1ti3pndem39ofrkk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMhC8B7_k2eU8ZqyVj0ZkjXEwDmodmJ_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533633517315-qnpt60bpc081cjb1ti3pndem39ofrkk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
