@@ -47,10 +47,6 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-
-            val intent= Intent(this@MainActivity,LoginQuizActivity::class.java)
-            startActivity(intent)
-            finish()
         }
     }
 
