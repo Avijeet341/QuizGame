@@ -6,6 +6,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -31,7 +32,7 @@ class QuizActivity : AppCompatActivity() {
     var correctAnswer=""
  //  next btn counter
     var questionCount=0
-    var questionNumber=1
+    var questionNumber=0//change set 0--->4
     //user input
     var userAnswer=""
     var userCorrect=0
@@ -64,10 +65,13 @@ class QuizActivity : AppCompatActivity() {
 
         do{
            val number= Random.nextInt(1,11)
+            Log.d("number",number.toString())
             questions.add(number)
         } while (questions.size<5)
 
+        Log.d("numberOfQuestions",questions.toString())
 
+//
 
         gameLogic()
         QuizBinding.buttonNext.setOnClickListener {
@@ -160,14 +164,14 @@ class QuizActivity : AppCompatActivity() {
 
                 //number of children under questions parent using snapshot obj
                 questionCount= snapshot.childrenCount.toInt()
-                if(questionNumber<=questionCount){
+                if(questionNumber<questions.size){
                     //data retrieving method
-                    question=snapshot.child(questionNumber.toString()).child("q").value.toString()
-                    answerA=snapshot.child(questionNumber.toString()).child("a").value.toString()
-                    answerB=snapshot.child(questionNumber.toString()).child("b").value.toString()
-                    answerC=snapshot.child(questionNumber.toString()).child("c").value.toString()
-                    answerD=snapshot.child(questionNumber.toString()).child("d").value.toString()
-                    correctAnswer=snapshot.child(questionNumber.toString()).child("answer").value.toString()
+                    question=snapshot.child(questions.elementAt(questionNumber).toString()).child("q").value.toString()
+                    answerA=snapshot.child(questions.elementAt(questionNumber).toString()).child("a").value.toString()
+                    answerB=snapshot.child(questions.elementAt(questionNumber).toString()).child("b").value.toString()
+                    answerC=snapshot.child(questions.elementAt(questionNumber).toString()).child("c").value.toString()
+                    answerD=snapshot.child(questions.elementAt(questionNumber).toString()).child("d").value.toString()
+                    correctAnswer=snapshot.child(questions.elementAt(questionNumber).toString()).child("answer").value.toString()
 
                     QuizBinding.textViewQuestion.text=question
                     QuizBinding.textViewA.text=answerA

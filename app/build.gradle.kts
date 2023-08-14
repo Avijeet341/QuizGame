@@ -56,4 +56,7 @@ dependencies {
     //database
     implementation("com.google.firebase:firebase-database-ktx:20.2.2")
 
+    //on back
+    //implementation ("androidx.appcompat:appcompat:1.7.0-alpha03")
+
 }

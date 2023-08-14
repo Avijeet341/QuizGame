@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import android.window.OnBackInvokedDispatcher
 import com.avi.funquizgame.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -52,9 +54,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    override fun onBackPressed() {
-//        val intent= Intent(this@MainActivity,LoginQuizActivity::class.java)
-//        startActivity(intent)
-//        finish()
-//    }
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
+    }
 }
